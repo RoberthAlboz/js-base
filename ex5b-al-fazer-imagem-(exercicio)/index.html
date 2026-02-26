@@ -66,20 +66,35 @@
   </div>
 
   <!-- Script JavaScript embutido na página -->
-  <script>
+<script>
+// Seleciona a imagem e os parágrafos pelo ID
+const image = document.querySelector( '#myImage');
+const text = document.querySelector( '#myText')
+const subText = document.querySelector( '#subText')
 
-  button.addEventListener('hover', () => {
-    value += 1;
-    num.textContent = `${value}`;
-    
-    if (value%2 == 0) {
-        num.style.backgroundColor = 'green';
-    } else {
-        num.style.backgroundColor = 'red';
-    }
-})
-    
+// Define as URLs das imagens
+const imageOriginal = 'image.png';
+const imageAlternativa = 'image2.png';
 
+// Adiciona um evento de "mouseover" (quando o mouse passa sobre a imagem)
+image.addEventListener('mouseover', () => {
+  // Altera a imagem para a alternativa
+  image.src = imageAlternativa;
+  // Altera o texto principal
+  text.textContent = 'Imagem alterada!';
+  // Altera o texto adicional
+  subText.textContent = 'Doja Cat - Litte cat!';
+});
+
+// Adiciona um evento de "mouseout" (quando o mouse sai da imagem)
+  image.addEventListener('mouseout', () => {
+  // Altera a imagem para a original
+  image.src = imageOriginal;
+  // Altera o texto principal
+  text.textContent = 'Passe o mouse sobre a imagem';
+  // Altera o texto adicional
+  subText.textContent = 'Sabrina Carpenter - Linda!';
+});
 
   </script>
 </body>
