@@ -68,8 +68,17 @@
   <!-- Script JavaScript embutido na página -->
   <script>
 
-
-    // 1ª Digitação (Resolva aqui o exercício)
+  button.addEventListener('hover', () => {
+    value += 1;
+    num.textContent = `${value}`;
+    
+    if (value%2 == 0) {
+        num.style.backgroundColor = 'green';
+    } else {
+        num.style.backgroundColor = 'red';
+    }
+})
+    
 
 
   </script>
