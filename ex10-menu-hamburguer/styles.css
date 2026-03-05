@@ -1,6 +1,6 @@
 /* styles.css */
 /* Reset básico para remover margens e paddings padrão */
-* {
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,11 +21,15 @@ nav {
 }
 
 /* Estilo do ícone do menu hambúrguer */
-/* .menu-icon {
+ .menu-icon {
 
-  2ª Digitação (Aqui) 
+  /*2ª Digitação (Aqui) */
+  display: none; /* Oculta o icone por padrão (visivel em telas pequenas)*/
+  font-size: 1.5rem; /tamanho no icone/
+  color: white;
+  cursor: pointer;
 
-} */
+} 
 
 /* Estilo da lista de navegação */
 .nav-list {
@@ -50,15 +54,22 @@ nav {
 
 /* Estilos para telas pequenas (max-width: 768px) */
 @media (max-width: 768px) {
-  /* .menu-icon {
+   .menu-icon {
 
-    3ª Digitação (Aqui)
+  /*  3ª Digitação (Aqui)*/
+  display: block;/* Exibe o ícone em telas pequenas */
     
   }
 
   .nav-list {
-
-  } */
+    display: none; /* Oculta a lista de navegação */
+    flex-direction: column; /* Exibe os itens em coluna */
+    width: 100%; /* largura total*/
+    background-color: #333;
+    position: absolute; /* Posiciona a lsita sobre o conteúdo*/
+    top: 60px; /* distância do topo*/
+    left: 0; /Alinha à esquerda/
+  } 
 
   .nav-list li {
     margin: 1rem 0; /* Espaçamento entre os itens */
