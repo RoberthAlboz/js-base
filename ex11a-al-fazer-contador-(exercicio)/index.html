@@ -51,8 +51,36 @@
 
 
     // 1ª Digitação (Resolva aqui o exercício)
+    const startButton = document.querySelector('#startButton'); //Declarado variáveis
+    const pauseButton = document.querySelector('#pauseButton');
+    const resetButton = document.querySelector('#resetButton');
+    
+    let value = 0;                 //Declarado variáveis
+    let intervalo = null;
 
 
+    // 1. BOTÃO DE START
+    startButton.addEventListener('click', () => {  // Evento de escuta
+    intervalo = setInterval(() => { // Um intervalo de tempo para executar o bloco de código
+        value += 1;                 // Igual o primeiro contador, ele adiciona +1
+        timer.textContent = value;  // Mostra na tela o +1 atualizando a contagem 
+    }, 1000);                       // O compasso entre cada segundo adicional
+    
+    })
+
+    // 2. O BOTÃO PAUSE
+    pauseButton.addEventListener('click', () => {
+    // O clearInterval "desliga" o motor 
+    clearInterval(intervalo);
+    });
+
+    // 3. O BOTÃO RESET
+    resetButton.addEventListener('click', () => {
+    clearInterval(intervalo); // Para o timer se estiver rodando
+    value = 0;                // Zera o dado na memória
+    timer.textContent = value; // Zera o visual na tela
+    });
   </script>
+
 </body>
 </html>

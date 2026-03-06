@@ -57,8 +57,18 @@
     ];
 
        // 1ª Digitação (Resolva aqui o exercício)
+       const newQuoteButton = document.querySelector('#newQuoteButton'); // Variável
 
+      newQuoteButton.addEventListener('click', () => {  // Evento de escuta
+      
+      const randomIndex = Math.floor(Math.random() * quotes.length);  // Foi realizado uma pesquisa para usar o comando Math.floor que gera um número decimal (0-1), multiplica pelo tamanho da lista e arredonda para baixo, assim aleatorizando a lista
+      const randomQuote = quotes[randomIndex];
 
+      
+      document.getElementById('quote').innerText = randomQuote; // Processa o comando visualmente para o usuário
+      
+      })
+       
   </script>
 </body>
 </html>
